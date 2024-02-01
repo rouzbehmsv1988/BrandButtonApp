@@ -27,7 +27,7 @@ enum ButtonColor: String, CaseIterable, Identifiable {
     var color: Color {
         switch self {
         case .blue: return Color("DarkBlue")
-        case .green: return Color("DarkGreen") // Assuming you've defined "VeryDarkGreen" in your asset catalog
+        case .green: return Color("DarkGreen")
         }
     }
 }
@@ -41,28 +41,9 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Picker("Button Style", selection: $style.style) {
-                    Text("Leading").tag(ButtonStyles.leading)
-                    Text("Trailing").tag(ButtonStyles.trailing)
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-                
-                Picker("Button Mode", selection: $style.mode) {
-                    Text("Primary").tag(ButtonModes.primary)
-                    Text("Secondary").tag(ButtonModes.secondary)
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-                
-                Picker("Button Color", selection: $style.color) {
-                    ForEach(ButtonColor.allCases) { color in
-                        Text(color.rawValue).tag(color)
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-                
+                leadingTrailingPicker()
+                modePicker()
+                colorPicker()
                 Toggle(isOn: $style.isDisabled) {
                     Text("Is Disabled")
                 }.padding()
@@ -70,9 +51,44 @@ struct ContentView: View {
                 NavigationLink("Create button") {
                     BrandButtonContainerView(style: $style)
                 }
-                
             }
         }
+    }
+    
+    func leadingTrailingPicker() -> some View {
+        Picker("Button Style", 
+               selection: $style.style) {
+            Text("Leading")
+                .tag(ButtonStyles.leading)
+            Text("Trailing")
+                .tag(ButtonStyles.trailing)
+        }
+        .pickerStyle(SegmentedPickerStyle())
+        .padding()
+    }
+    
+    func modePicker() -> some View {
+        Picker("Button Mode", 
+               selection: $style.mode) {
+            Text("Primary")
+                .tag(ButtonModes.primary)
+            Text("Secondary")
+                .tag(ButtonModes.secondary)
+        }
+        .pickerStyle(SegmentedPickerStyle())
+        .padding()
+    }
+    
+    func colorPicker() -> some View {
+        Picker("Button Color", 
+               selection: $style.color) {
+            ForEach(ButtonColor.allCases) { color in
+                Text(color.rawValue).tag(color)
+            }
+        }
+        .pickerStyle(SegmentedPickerStyle())
+        .padding()
+        
     }
 }
 
