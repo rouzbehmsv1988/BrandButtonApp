@@ -14,6 +14,8 @@
 		D5851EF92B6B9984005CD2B3 /* ButtonMakerAPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5851EF82B6B9984005CD2B3 /* ButtonMakerAPPTests.swift */; };
 		D5851F032B6B9984005CD2B3 /* ButtonMakerAPPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5851F022B6B9984005CD2B3 /* ButtonMakerAPPUITests.swift */; };
 		D5851F052B6B9984005CD2B3 /* ButtonMakerAPPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5851F042B6B9984005CD2B3 /* ButtonMakerAPPUITestsLaunchTests.swift */; };
+		D5851F132B6B9998005CD2B3 /* BrandButton in Frameworks */ = {isa = PBXBuildFile; productRef = D5851F122B6B9998005CD2B3 /* BrandButton */; };
+		D5851F152B6B99DC005CD2B3 /* BrandButtonContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5851F142B6B99DC005CD2B3 /* BrandButtonContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,7 @@
 		D5851EFE2B6B9984005CD2B3 /* ButtonMakerAPPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButtonMakerAPPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5851F022B6B9984005CD2B3 /* ButtonMakerAPPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMakerAPPUITests.swift; sourceTree = "<group>"; };
 		D5851F042B6B9984005CD2B3 /* ButtonMakerAPPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMakerAPPUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D5851F142B6B99DC005CD2B3 /* BrandButtonContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButtonContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5851F132B6B9998005CD2B3 /* BrandButton in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +102,7 @@
 				D5851EE92B6B9983005CD2B3 /* ContentView.swift */,
 				D5851EEB2B6B9983005CD2B3 /* Assets.xcassets */,
 				D5851EED2B6B9983005CD2B3 /* Preview Content */,
+				D5851F142B6B99DC005CD2B3 /* BrandButtonContainerView.swift */,
 			);
 			path = ButtonMakerAPP;
 			sourceTree = "<group>";
@@ -143,6 +148,9 @@
 			dependencies = (
 			);
 			name = ButtonMakerAPP;
+			packageProductDependencies = (
+				D5851F122B6B9998005CD2B3 /* BrandButton */,
+			);
 			productName = ButtonMakerAPP;
 			productReference = D5851EE42B6B9983005CD2B3 /* ButtonMakerAPP.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +223,9 @@
 				Base,
 			);
 			mainGroup = D5851EDB2B6B9983005CD2B3;
+			packageReferences = (
+				D5851F112B6B9998005CD2B3 /* XCRemoteSwiftPackageReference "BrandButtonSPM" */,
+			);
 			productRefGroup = D5851EE52B6B9983005CD2B3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5851EEA2B6B9983005CD2B3 /* ContentView.swift in Sources */,
+				D5851F152B6B99DC005CD2B3 /* BrandButtonContainerView.swift in Sources */,
 				D5851EE82B6B9983005CD2B3 /* ButtonMakerAPPApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,6 +594,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D5851F112B6B9998005CD2B3 /* XCRemoteSwiftPackageReference "BrandButtonSPM" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rouzbehmsv1988/BrandButtonSPM.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D5851F122B6B9998005CD2B3 /* BrandButton */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5851F112B6B9998005CD2B3 /* XCRemoteSwiftPackageReference "BrandButtonSPM" */;
+			productName = BrandButton;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D5851EDC2B6B9983005CD2B3 /* Project object */;
 }
